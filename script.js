@@ -1,3 +1,5 @@
+
+//Handling button text and keyboard Enter
 document.getElementById("search_submit").innerHTML="Search";
 document.getElementById("search_text").addEventListener("keypress", function(event) {
   
@@ -7,6 +9,12 @@ document.getElementById("search_text").addEventListener("keypress", function(eve
   }
 });
 
+//Error handling
+var error_me=document.createElement("div");
+error_me.setAttribute("class","text-danger h2");
+
+
+//Display Food Item List
  async function apiCall()
  {
 var search_str=document.getElementById("search_text").value;
@@ -21,9 +29,8 @@ else{
     document.getElementById("content").innerHTML=error_me.outerHTML;
 }
 }
-var error_me=document.createElement("div");
-    error_me.setAttribute("class","text-danger h2");
 
+//Mealname, Ingredient and Instructions
  function handleResponse(response) {
 
     content.innerHTML="";
